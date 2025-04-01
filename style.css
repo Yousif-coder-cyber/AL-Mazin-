@@ -1,7 +1,37 @@
-.about {
-    text-align: right;
-    direction: rtl;
-    font-family: 'Arial', 'Tahoma', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
+.doctor-section {
+    margin-top: 40px;
+    text-align: center; /* Center the heading */
+    display: flex; /* Enable flexbox for horizontal arrangement */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    justify-content: center; /* Center the doctor divs horizontally */
+    gap: 20px; /* Add some spacing between the doctor divs */
+}
+
+.doctor {
+    display: flex; /* Enable flexbox within each doctor div for image and text */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally within each doctor div */
+    width: 150px; /* Adjust as needed */
+    margin: 10px;
+    text-align: center; /* Center the text below the image */
+}
+
+.doctor img {
+    width: 100px; /* Or your desired image width */
+    height: 100px; /* Or your desired image height */
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 5px; /* Add some space between image and text */
+}
+
+.doctor p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.doctor-section h2 {
+    width: 100%; /* Make the heading take full width */
+    margin-bottom: 15px;
+    text-align: center;
 }
