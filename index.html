@@ -16,8 +16,34 @@
             display: block;
             margin: auto;
         }
-        .about {
+        .about-container {
+            border: 1px solid #ccc;
             margin-top: 20px;
+            text-align: center;
+        }
+        .section-button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .section-content {
+            display: none;
+            padding: 15px;
+            text-align: justify;
+            direction: ltr;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .section-content.active {
+            display: block;
+        }
+        .arabic-content {
+            display: none;
+            padding: 15px;
             text-align: justify;
             direction: rtl;
             font-family: 'Tajawal', 'Amiri', 'Arial', 'Tahoma', sans-serif;
@@ -25,15 +51,12 @@
             line-height: 1.8;
             unicode-bidi: embed;
         }
-        .english {
-            text-align: left;
-            direction: ltr;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            line-height: 1.8;
+        .arabic-content.active {
+            display: block;
         }
         h1, h2 {
             margin-top: 20px;
+            text-align: center;
         }
         ul {
             list-style-type: square;
@@ -46,83 +69,109 @@
         }
         .doctor {
             display: inline-block;
-            width: 200px;
+            width: 150px;
             margin: 10px;
             text-align: center;
         }
         .doctor img {
-            width: 150px;
-            height: auto;
+            width: 100px;
+            height: 100px;
             border-radius: 10px;
+            object-fit: cover;
         }
         .doctor p {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
-
+    <img src="https://i.postimg.cc/d1RQh0Sx/Screenshot-2025-03-31-143115.png" alt="Al-Mazin Bureau for Geological Consulting and Studies">
     <h1>Al-Mazin Bureau for Geological Consulting and Studies</h1>
-  <img src="https://i.postimg.cc/d1RQh0Sx/Screenshot-2025-03-31-143115.png" alt="Al-Mazin Bureau for Geological Consulting and Studies">
 
+    <div class="about-container">
+        <button class="section-button" onclick="toggleSection('about')">About Us</button>
+        <button class="section-button" onclick="toggleSection('services')">Our Services</button>
+        <button class="section-button" onclick="toggleSection('contact')">Contact Us</button>
 
+        <div id="about" class="section-content">
+            <h2>About Us</h2>
+            <p>
+                Al-Mazin Bureau for Geological Studies and Consulting was established in (1998) and includes
+                a distinguished group of consultants in various fields of geology, many of whom have worked for years in relevant government departments and institutions.
+                The Bureau’s future vision goes beyond the traditional role of consulting firms, aiming to develop ambitious strategic plans to position Iraq in the place it rightfully deserves.
+            </p>
+        </div>
 
-    <div class="about">
-        <h2>من نحن</h2>
-        <p>
-            تأسس مكتب المازن للدراسات والاستشارات الجيولوجية سنة 1998، ويضم المكتب نخبة من الاستشاريين في مجالات واسعة في علم الجيولوجيا،
-            ممن عملوا سنوات طوال لدى الدوائر والمؤسسات ذات العلاقة. إن الرؤية المستقبلية للمكتب تتجاوز الدور التقليدي للمكاتب الاستشارية،
-            وصولًا إلى وضع خطط مستقبلية طموحة لوضع العراق في ما يستحقه من مقام.
-        </p>
+        <div id="services" class="section-content">
+            <h1>Our Services</h1>
+            <ul>
+                <li>Mineral Investigation</li>
+                <li>Geochemical Studies</li>
+                <li>Environmental Impact Assessment (EIA)</li>
+                <li>Training Courses</li>
+                <li>Preliminary and Detailed Feasibility Studies</li>
+                <li>Geotechnical Site Evaluation</li>
+                <li>Radioactivity Studies</li>
+                <li>Hydrogeological Studies</li>
+                <li>Remote Sensing Studies</li>
+                <li>Geophysical Survey</li>
+                <li>Seismic Code Form</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section-content">
+            <h2>Contact Us</h2>
+            <ul>
+                <li>☎️ +964 773 670 0004 / +964 787 198 5019</li>
+                <li>📧 mazingroup64@gmail.com</li>
+                <li>📍 Al-Karadeh, Baghdad</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="about english">
-        <h2>About Us</h2>
-        <p>
-            Al-Mazin Bureau for Geological Studies and Consulting was established in (1998) and includes
-            a distinguished group of consultants in various fields of geology, many of whom have worked for years in relevant government departments and institutions.
-            The Bureau’s future vision goes beyond the traditional role of consulting firms, aiming to develop ambitious strategic plans to position Iraq in the place it rightfully deserves.
-        </p>
+    <div class="about-container">
+        <button class="section-button" onclick="toggleArabicSection('arabic-about')">من نحن</button>
+        <button class="section-button" onclick="toggleArabicSection('arabic-services')">خدماتنا</button>
+        <button class="section-button" onclick="toggleArabicSection('arabic-contact')">اتصل بنا</button>
 
-        <h1>Our Services</h1>
-        <ul>
-            <li>Mineral Investigation</li>
-            <li>Geochemical Studies</li>
-            <li>Environmental Impact Assessment (EIA)</li>
-            <li>Training Courses</li>
-            <li>Preliminary and Detailed Feasibility Studies</li>
-            <li>Geotechnical Site Evaluation</li>
-            <li>Radioactivity Studies</li>
-            <li>Hydrogeological Studies</li>
-            <li>Remote Sensing Studies</li>
-            <li>Geophysical Survey</li>
-            <li>Seismic Code Form</li>
-        </ul>
+        <div id="arabic-about" class="arabic-content">
+            <h2>من نحن</h2>
+            <p>
+                تأسس مكتب المازن للدراسات والاستشارات الجيولوجية سنة 1998، ويضم المكتب نخبة من الاستشاريين في مجالات واسعة في علم الجيولوجيا،
+                ممن عملوا سنوات طوال لدى الدوائر والمؤسسات ذات العلاقة. إن الرؤية المستقبلية للمكتب تتجاوز الدور التقليدي للمكاتب الاستشارية،
+                وصولًا إلى وضع خطط مستقبلية طموحة لوضع العراق في ما يستحقه من مقام.
+            </p>
+        </div>
 
-        <h2>خدماتنا</h2>
-        <ul>
-            <li>التحري المعدني والدراسات الجيوكيميائية</li>
-            <li>دراسات الأثر البيئي</li>
-            <li>الدورات التدريبية</li>
-            <li>دراسات الجدوى الأولية والمفصلة</li>
-            <li>تقييم المواقع الجيوتقنية</li>
-            <li>دراسات النشاط الإشعاعي</li>
-            <li>دراسات المياه الجوفية</li>
-            <li>دراسات الاستشعار عن بعد</li>
-            <li>المسح الجيوفيزيائي</li>
-            <li>استمارة الكود الزلزالي</li>
-        </ul>
+        <div id="arabic-services" class="arabic-content">
+            <h2>خدماتنا</h2>
+            <ul>
+                <li>التحري المعدني والدراسات الجيوكيميائية</li>
+                <li>دراسات الأثر البيئي</li>
+                <li>الدورات التدريبية</li>
+                <li>دراسات الجدوى الأولية والمفصلة</li>
+                <li>تقييم المواقع الجيوتقنية</li>
+                <li>دراسات النشاط الإشعاعي</li>
+                <li>دراسات المياه الجوفية</li>
+                <li>دراسات الاستشعار عن بعد</li>
+                <li>المسح الجيوفيزيائي</li>
+                <li>استمارة الكود الزلزالي</li>
+            </ul>
+        </div>
 
-        <h2>Contact us</h2>
-        <ul>
-            <li>☎️ +964 773 670 0004 / +964 787 198 5019</li>
-            <li>📧 mazingroup64@gmail.com</li>
-            <li>📍 Al-Karadeh, Baghdad</li>
-        </ul>
+        <div id="arabic-contact" class="arabic-content">
+            <h2>اتصل بنا</h2>
+            <ul>
+                <li>☎️ +964 773 670 0004 / +964 787 198 5019</li>
+                <li>📧 mazingroup64@gmail.com</li>
+                <li>📍 الكرادة، بغداد</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="doctor-section">
+  <div class="doctor-section">
         <h2>Our Experts</h2>
         <div class="doctor">
             <img src="https://i.postimg.cc/vBybwsHL/Screenshot-2025-03-31-143150.png" alt="Dr. Mazin Al-Aboudi">
@@ -142,10 +191,40 @@
         </div>
         <div class="doctor">
             <img src="https://i.postimg.cc/YSwJhxKt/Screenshot-2025-03-31-143430.png" alt="Araseen Kalikisian">
-            <p>Araseen Kalikisian<br>Geotechnical Site Evaluation Expert<br>Consultant</p>
+            <p>Dr.Araseen Kalikisian<br>Geotechnical Site Evaluation Expert<br>Consultant</p>
+        </div>
+    </div>
         </div>
     </div>
 
+    <script>
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+
+        function toggleArabicSection(sectionId) {
+            const sections = document.querySelectorAll('.arabic-content');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleSection('about'); // Show English About Us by default
+            toggleArabicSection('arabic-about'); // Show Arabic من نحن by default (you can change this)
+        });
+    </script>
 </body>
 </html>
 
